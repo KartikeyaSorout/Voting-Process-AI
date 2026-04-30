@@ -19,7 +19,7 @@ window.showToast = function showToast(message, type) {
 };
 
 /* ── Main App ── */
-const App = (() => {
+window.App = (() => {
   /* ── DOM refs ── */
   const loader      = document.getElementById("loader");
   const themeToggle = document.getElementById("themeToggle");

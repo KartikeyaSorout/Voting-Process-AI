@@ -6,7 +6,7 @@
  * @module chat
  */
 
-const ChatModule = (() => {
+window.ChatModule = (() => {
   /* ── Constants ── */
   const API_ENDPOINT = "/api/chat";
   const MAX_HISTORY  = 20;

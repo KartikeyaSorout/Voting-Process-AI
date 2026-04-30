@@ -5,7 +5,7 @@
  * @module quiz
  */
 
-const QuizModule = (() => {
+window.QuizModule = (() => {
   /* ── Questions Bank ── */
   const ALL_QUESTIONS = [
     { q: "What is the minimum voting age in India?", options: ["16 years", "18 years", "21 years", "25 years"], ans: 1, explanation: "The 61st Constitutional Amendment (1988) lowered the voting age from 21 to 18 years." },

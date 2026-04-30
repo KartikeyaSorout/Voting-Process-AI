@@ -5,7 +5,7 @@
  * @module auth
  */
 
-const AuthModule = (() => {
+window.AuthModule = (() => {
   /** @type {firebase.User|null} Currently signed-in user */
   let currentUser = null;
 

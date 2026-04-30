@@ -19,10 +19,10 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 /** @type {firebase.auth.Auth} Firebase Auth instance */
-const auth = firebase.auth();
+window.auth = firebase.auth();
 
 /** @type {firebase.firestore.Firestore} Firestore instance */
-const db = firebase.firestore();
+window.db = firebase.firestore();
 
 // Initialize Analytics (if configured)
 try {

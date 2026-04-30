@@ -5,7 +5,7 @@
  * @module news
  */
 
-const NewsModule = (() => {
+window.NewsModule = (() => {
   const newsFeed = document.getElementById("newsFeed");
 
   /** @type {Array<{tag:string, title:string, summary:string, date:string, url:string}>} */

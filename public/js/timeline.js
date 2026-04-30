@@ -5,7 +5,7 @@
  * @module timeline
  */
 
-const TimelineModule = (() => {
+window.TimelineModule = (() => {
   const filterBtns = document.querySelectorAll(".tf-btn");
   const events     = document.querySelectorAll(".timeline-event");
 
