@@ -7,12 +7,12 @@
 
 const firebaseConfig = {
   apiKey: "AIzaSyCX50gML5ePrjTmQZFUxsxAcb5vm1Zk64Y",
-  authDomain: "voting-process-ai.firebaseapp.com",
-  projectId: "voting-process-ai",
-  storageBucket: "voting-process-ai.firebasestorage.app",
-  messagingSenderId: "000000000000",
-  appId: "1:000000000000:web:0000000000000000000000",
-  measurementId: "G-XXXXXXXXXX"
+  authDomain: "election-assistant-936d2.firebaseapp.com",
+  projectId: "election-assistant-936d2",
+  storageBucket: "election-assistant-936d2.firebasestorage.app",
+  messagingSenderId: "1016940258966",
+  appId: "1:1016940258966:web:65dfd481974d1631c384b7",
+  measurementId: "G-GCP6Z5HTSK"
 };
 
 // Initialize Firebase
@@ -26,7 +26,7 @@ const db = firebase.firestore();
 
 // Initialize Analytics (if configured)
 try {
-  if (firebaseConfig.measurementId && !firebaseConfig.measurementId.startsWith("G-XX")) {
+  if (firebaseConfig.measurementId) {
     firebase.analytics();
   }
 } catch (e) {
