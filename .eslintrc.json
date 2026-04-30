@@ -1,0 +1,33 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "script"
+  },
+  "globals": {
+    "firebase": "readonly",
+    "auth": "readonly",
+    "db": "readonly",
+    "AuthModule": "readonly",
+    "ChatModule": "readonly",
+    "QuizModule": "readonly",
+    "TimelineModule": "readonly",
+    "NewsModule": "readonly",
+    "App": "readonly",
+    "showToast": "readonly"
+  },
+  "rules": {
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "no-console": "off",
+    "no-undef": "warn",
+    "eqeqeq": "error",
+    "curly": ["error", "multi-line"],
+    "no-var": "error",
+    "prefer-const": "warn"
+  }
+}
