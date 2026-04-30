@@ -1,0 +1,46 @@
+{
+  "name": "ElectIQ — Your Smart Election Guide",
+  "short_name": "ElectIQ",
+  "description": "AI-powered Indian election guide. Voter registration, timelines, EVM explainer, civic quiz & AI chat.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1f3d",
+  "theme_color": "#1a3a5c",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "government", "news"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "AI Chat",
+      "short_name": "Chat",
+      "description": "Ask AI about elections",
+      "url": "/#chat"
+    },
+    {
+      "name": "Voter Guide",
+      "short_name": "Guide",
+      "description": "How to vote guide",
+      "url": "/#guide"
+    },
+    {
+      "name": "Civic Quiz",
+      "short_name": "Quiz",
+      "description": "Test your knowledge",
+      "url": "/#quiz"
+    }
+  ]
+}

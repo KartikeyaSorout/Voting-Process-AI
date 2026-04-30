@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElectIQ — Your Smart Election Guide</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loader" class="loader" role="status" aria-label="Loading ElectIQ">
+    <div class="loader-inner">
+      <div class="loader-ballot">
+        <div class="ballot-box">🗳️</div>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+        <p>Initializing ElectIQ…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="ElectIQ Home">
+        <span class="logo-icon">🗳️</span>
+        <span class="logo-text">Elect<em>IQ</em></span>
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <button class="nav-btn active" data-section="home" aria-current="page">Home</button>
+        <button class="nav-btn" data-section="timeline">Timeline</button>
+        <button class="nav-btn" data-section="guide">Voter Guide</button>
+        <button class="nav-btn" data-section="quiz">Quiz</button>
+        <button class="nav-btn" data-section="chat">Ask AI</button>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <span class="theme-icon">☀️</span>
+        </button>
+        <button class="auth-btn" id="authBtn" aria-label="Sign in with Google">
+          <span>Sign In</span>
+        </button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="Mobile navigation">
+      <button class="nav-btn active" data-section="home">🏠 Home</button>
+      <button class="nav-btn" data-section="timeline">📅 Timeline</button>
+      <button class="nav-btn" data-section="guide">📖 Voter Guide</button>
+      <button class="nav-btn" data-section="quiz">🎯 Quiz</button>
+      <button class="nav-btn" data-section="chat">🤖 Ask AI</button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- ─────────────────── HOME SECTION ─────────────────── -->
+    <section id="section-home" class="section active" aria-labelledby="home-heading">
+      <div class="hero">
+        <div class="hero-bg" aria-hidden="true">
+          <div class="hero-orb orb-1"></div>
+          <div class="hero-orb orb-2"></div>
+          <div class="hero-grid"></div>
+        </div>
+        <div class="hero-content">
+          <div class="hero-badge animate-fade-up">🇮🇳 India's #1 Election Guide</div>
+          <h1 id="home-heading" class="hero-title animate-fade-up delay-1">
+            Understand Every <br /><em>Vote. Every Step.</em>
+          </h1>
+          <p class="hero-subtitle animate-fade-up delay-2">
+            ElectIQ is your AI-powered companion for navigating the Indian election process — 
+            from voter registration to result night, explained clearly and intelligently.
+          </p>
+          <div class="hero-actions animate-fade-up delay-3">
+            <button class="btn-primary" data-section="chat" aria-label="Start chatting with AI">
+              <span>Ask AI Now</span> <span class="btn-arrow">→</span>
+            </button>
+            <button class="btn-secondary" data-section="guide" aria-label="Read voter guide">
+              Read the Guide
+            </button>
+          </div>
+          <div class="hero-stats animate-fade-up delay-4" aria-label="Key statistics">
+            <div class="stat" role="img" aria-label="968 million eligible voters">
+              <strong>968M+</strong><span>Eligible Voters</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat" role="img" aria-label="543 Lok Sabha seats">
+              <strong>543</strong><span>Lok Sabha Seats</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat" role="img" aria-label="7 phases of voting">
+              <strong>7</strong><span>Voting Phases</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual animate-fade-up delay-2" aria-hidden="true">
+          <div class="hero-card card-float">
+            <div class="hc-icon">🗳️</div>
+            <div class="hc-text">
+              <strong>Your Vote Counts</strong>
+              <span>Every eligible citizen can shape India's future</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="features-section">
+        <div class="section-label">Why ElectIQ?</div>
+        <h2 class="section-title">Everything You Need to Know</h2>
+        <div class="features-grid">
+          <article class="feature-card" tabindex="0" role="button" data-section="chat" aria-label="AI Assistant feature">
+            <div class="fc-icon" aria-hidden="true">🤖</div>
+            <h3>AI Assistant</h3>
+            <p>Ask any question about elections — our Claude-powered AI answers in plain language, with sources.</p>
+            <span class="fc-link">Try it →</span>
+          </article>
+          <article class="feature-card" tabindex="0" role="button" data-section="timeline" aria-label="Election Timeline feature">
+            <div class="fc-icon" aria-hidden="true">📅</div>
+            <h3>Election Timeline</h3>
+            <p>Interactive visual timeline of key dates: announcement, nominations, voting phases, results.</p>
+            <span class="fc-link">Explore →</span>
+          </article>
+          <article class="feature-card" tabindex="0" role="button" data-section="guide" aria-label="Voter Guide feature">
+            <div class="fc-icon" aria-hidden="true">📖</div>
+            <h3>Voter Guide</h3>
+            <p>Step-by-step guide for first-time voters: registration, documents, booth location, and more.</p>
+            <span class="fc-link">Read →</span>
+          </article>
+          <article class="feature-card" tabindex="0" role="button" data-section="quiz" aria-label="Civic Quiz feature">
+            <div class="fc-icon" aria-hidden="true">🎯</div>
+            <h3>Civic Quiz</h3>
+            <p>Test your knowledge of India's constitution and electoral system. Earn badges!</p>
+            <span class="fc-link">Take Quiz →</span>
+          </article>
+          <article class="feature-card" tabindex="0" role="button" data-section="guide" aria-label="Process Explainer feature">
+            <div class="fc-icon" aria-hidden="true">⚙️</div>
+            <h3>Process Explainer</h3>
+            <p>Understand how votes are counted, EVM machines work, and how winners are declared.</p>
+            <span class="fc-link">Learn →</span>
+          </article>
+          <article class="feature-card special-card" tabindex="0" role="button" data-section="chat" aria-label="Multilingual Support feature">
+            <div class="fc-icon" aria-hidden="true">🌐</div>
+            <h3>Multilingual</h3>
+            <p>Ask questions in Hindi, English, or other regional languages. AI understands all.</p>
+            <span class="fc-link">Start →</span>
+          </article>
+        </div>
+      </div>
+
+      <!-- Recent Updates -->
+      <div class="updates-section">
+        <div class="section-label">Live Updates</div>
+        <h2 class="section-title">Election News Feed</h2>
+        <div class="news-feed" id="newsFeed" aria-live="polite" aria-label="Latest election news">
+          <div class="news-loading">
+            <div class="spinner" aria-hidden="true"></div>
+            <span>Fetching latest news…</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── TIMELINE SECTION ─────────────────── -->
+    <section id="section-timeline" class="section" aria-labelledby="timeline-heading">
+      <div class="page-header">
+        <div class="section-label">Process Overview</div>
+        <h2 id="timeline-heading" class="page-title">Indian Election Timeline</h2>
+        <p class="page-subtitle">The complete journey from announcement to sworn-in government — visualized.</p>
+      </div>
+
+      <div class="timeline-filter" role="group" aria-label="Filter timeline phases">
+        <button class="tf-btn active" data-phase="all">All Phases</button>
+        <button class="tf-btn" data-phase="pre">Pre-Election</button>
+        <button class="tf-btn" data-phase="election">Election</button>
+        <button class="tf-btn" data-phase="post">Post-Election</button>
+      </div>
+
+      <div class="timeline-container" aria-label="Election timeline">
+        <div class="timeline-track" aria-hidden="true"></div>
+
+        <div class="timeline-event" data-phase="pre">
+          <div class="te-dot" aria-hidden="true"><span>1</span></div>
+          <div class="te-card">
+            <div class="te-phase-tag">Pre-Election</div>
+            <h3>📢 Election Announcement</h3>
+            <div class="te-date">Day 0 — Official Start</div>
+            <p>The Election Commission of India (ECI) issues the Model Code of Conduct. Political parties and candidates must follow strict guidelines from this date.</p>
+            <details class="te-details">
+              <summary>Key Facts</summary>
+              <ul>
+                <li>Model Code of Conduct comes into effect immediately</li>
+                <li>No new government schemes may be announced</li>
+                <li>All political advertising requires ECI approval</li>
+                <li>ECI is an autonomous constitutional body (Article 324)</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="timeline-event" data-phase="pre">
+          <div class="te-dot" aria-hidden="true"><span>2</span></div>
+          <div class="te-card">
+            <div class="te-phase-tag">Pre-Election</div>
+            <h3>📋 Voter List & Registration</h3>
+            <div class="te-date">Ongoing — Electoral Roll Update</div>
+            <p>Citizens aged 18+ can register to vote or update their details on the NVSP portal or via Form 6. The final electoral roll is published before voting.</p>
+            <details class="te-details">
+              <summary>How to Register</summary>
+              <ul>
+                <li>Visit <strong>voters.eci.gov.in</strong> or NVSP portal</li>
+                <li>Fill Form 6 (new registration) or Form 8 (correction)</li>
+                <li>Submit Aadhaar, address proof, photo</li>
+                <li>Track status online within 30 days</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="timeline-event" data-phase="pre">
+          <div class="te-dot" aria-hidden="true"><span>3</span></div>
+          <div class="te-card">
+            <div class="te-phase-tag">Pre-Election</div>
+            <h3>📝 Nomination Filing</h3>
+            <div class="te-date">~Day 20 — Candidates Register</div>
+            <p>Candidates file nomination papers with the Returning Officer. A security deposit is required. Nominations are scrutinized and candidates may withdraw within the deadline.</p>
+            <details class="te-details">
+              <summary>Key Facts</summary>
+              <ul>
+                <li>Security deposit: ₹25,000 for general; ₹12,500 for SC/ST</li>
+                <li>Deposit forfeited if candidate gets less than 1/6 of valid votes</li>
+                <li>Affidavit declaring criminal records, assets is mandatory</li>
+                <li>Final list of candidates published after withdrawal deadline</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="timeline-event" data-phase="pre">
+          <div class="te-dot" aria-hidden="true"><span>4</span></div>
+          <div class="te-card">
+            <div class="te-phase-tag">Pre-Election</div>
+            <h3>📣 Campaign Period</h3>
+            <div class="te-date">~Day 25–50 — Active Campaigning</div>
+            <p>Parties and candidates campaign across constituencies. Rallies, door-to-door outreach, media campaigns — all regulated by ECI's spending limits.</p>
+            <details class="te-details">
+              <summary>Spending Limits</summary>
+              <ul>
+                <li>Lok Sabha: ₹95 lakh per candidate (large states)</li>
+                <li>All expenses tracked and submitted to ECI</li>
+                <li>Silent period: 48 hours before polling day</li>
+                <li>Exit polls banned until last phase concludes</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="timeline-event" data-phase="election">
+          <div class="te-dot active-dot" aria-hidden="true"><span>5</span></div>
+          <div class="te-card highlight-card">
+            <div class="te-phase-tag election-tag">Election Day</div>
+            <h3>🗳️ Voting Day(s)</h3>
+            <div class="te-date">Phase 1–7 — The Big Day</div>
+            <p>Voters visit their designated polling booth (as per Voter ID / Aadhaar) and cast their vote using the Electronic Voting Machine (EVM). The process is phased across India's vast geography.</p>
+            <details class="te-details">
+              <summary>Voting Process</summary>
+              <ul>
+                <li>Bring Voter ID card or any of 12 approved photo IDs</li>
+                <li>Mark finger with indelible ink to prevent double-voting</li>
+                <li>Press the blue button on EVM for your candidate</li>
+                <li>VVPAT slip visible for 7 seconds as confirmation</li>
+                <li>Polling hours typically 7 AM – 6 PM</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="timeline-event" data-phase="post">
+          <div class="te-dot" aria-hidden="true"><span>6</span></div>
+          <div class="te-card">
+            <div class="te-phase-tag post-tag">Post-Election</div>
+            <h3>🔢 Vote Counting</h3>
+            <div class="te-date">Count Day — Results Declared</div>
+            <p>EVMs are transported to secure counting centers. Counting begins at 8 AM on count day. Results are declared constituency by constituency by Returning Officers.</p>
+            <details class="te-details">
+              <summary>Counting Process</summary>
+              <ul>
+                <li>EVMs opened in presence of candidates' agents</li>
+                <li>Each round counts votes for one polling booth</li>
+                <li>Postal ballots counted first</li>
+                <li>ECI declares winners on official website in real-time</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+        <div class="timeline-event" data-phase="post">
+          <div class="te-dot" aria-hidden="true"><span>7</span></div>
+          <div class="te-card">
+            <div class="te-phase-tag post-tag">Post-Election</div>
+            <h3>🏛️ Government Formation</h3>
+            <div class="te-date">~2 Weeks After Results</div>
+            <p>The party/coalition with majority (272+ seats) forms the government. The President invites the leader to form the government. The Prime Minister and Council of Ministers are sworn in.</p>
+            <details class="te-details">
+              <summary>Formation Steps</summary>
+              <ul>
+                <li>President invites majority party/coalition leader</li>
+                <li>PM takes oath of office & secrecy</li>
+                <li>Council of Ministers appointed (max 15% of Lok Sabha strength)</li>
+                <li>Floor test may be required if majority is unclear</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── VOTER GUIDE SECTION ─────────────────── -->
+    <section id="section-guide" class="section" aria-labelledby="guide-heading">
+      <div class="page-header">
+        <div class="section-label">Step-by-Step</div>
+        <h2 id="guide-heading" class="page-title">Complete Voter Guide</h2>
+        <p class="page-subtitle">Everything a first-time (or seasoned) voter needs to know.</p>
+      </div>
+
+      <!-- Guide Tabs -->
+      <div class="guide-tabs" role="tablist" aria-label="Guide sections">
+        <button class="guide-tab active" role="tab" aria-selected="true" data-tab="register" id="tab-register" aria-controls="tabpanel-register">📋 Register</button>
+        <button class="guide-tab" role="tab" aria-selected="false" data-tab="prepare" id="tab-prepare" aria-controls="tabpanel-prepare">🎒 Prepare</button>
+        <button class="guide-tab" role="tab" aria-selected="false" data-tab="vote" id="tab-vote" aria-controls="tabpanel-vote">🗳️ Vote</button>
+        <button class="guide-tab" role="tab" aria-selected="false" data-tab="understand" id="tab-understand" aria-controls="tabpanel-understand">📊 Results</button>
+        <button class="guide-tab" role="tab" aria-selected="false" data-tab="evm" id="tab-evm" aria-controls="tabpanel-evm">⚙️ EVM & Tech</button>
+      </div>
+
+      <div class="guide-content">
+        <!-- Register Tab -->
+        <div id="tabpanel-register" class="guide-panel active" role="tabpanel" aria-labelledby="tab-register">
+          <div class="guide-steps">
+            <div class="gs-step">
+              <div class="gs-num" aria-hidden="true">01</div>
+              <div class="gs-body">
+                <h3>Check Eligibility</h3>
+                <p>You must be an Indian citizen, aged 18 or above on the qualifying date (January 1st of the election year), and ordinarily resident in the constituency where you wish to register.</p>
+                <div class="gs-tag">🟢 Required: Aadhaar / Proof of Age / Address Proof</div>
+              </div>
+            </div>
+            <div class="gs-step">
+              <div class="gs-num" aria-hidden="true">02</div>
+              <div class="gs-body">
+                <h3>Visit the NVSP Portal</h3>
+                <p>Go to <strong>voters.eci.gov.in</strong> or the <strong>Voter Helpline App</strong>. Click "Register as New Voter" and select <strong>Form 6</strong>. You can also register at your nearest BLO (Booth Level Officer).</p>
+                <div class="gs-tag">🌐 Online: voters.eci.gov.in | 📱 App: Voter Helpline</div>
+              </div>
+            </div>
+            <div class="gs-step">
+              <div class="gs-num" aria-hidden="true">03</div>
+              <div class="gs-body">
+                <h3>Fill & Submit Form 6</h3>
+                <p>Provide your name, date of birth, address, and upload a passport-size photo. Attach supporting documents. Submit online — you'll receive an acknowledgement reference number.</p>
+                <div class="gs-tag">📎 Upload: Photo, Age Proof, Address Proof</div>
+              </div>
+            </div>
+            <div class="gs-step">
+              <div class="gs-num" aria-hidden="true">04</div>
+              <div class="gs-body">
+                <h3>Track Your Application</h3>
+                <p>Use your reference number on the NVSP portal to track the status. BLO may visit your address for verification. Processing takes up to 30 days.</p>
+                <div class="gs-tag">⏱️ Processing: Up to 30 days</div>
+              </div>
+            </div>
+            <div class="gs-step">
+              <div class="gs-num" aria-hidden="true">05</div>
+              <div class="gs-body">
+                <h3>Receive Voter ID (EPIC)</h3>
+                <p>Once approved, you'll receive your Elector's Photo Identity Card (EPIC) — also known as Voter ID. You can also download an e-EPIC from the portal.</p>
+                <div class="gs-tag">✅ Download e-EPIC instantly after approval</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prepare Tab -->
+        <div id="tabpanel-prepare" class="guide-panel" role="tabpanel" aria-labelledby="tab-prepare">
+          <div class="prepare-grid">
+            <div class="prep-card">
+              <h3>📍 Find Your Polling Booth</h3>
+              <p>Your assigned polling booth is printed on your Voter ID. You can also find it on the ECI website by entering your EPIC number.</p>
+              <a href="https://electoralsearch.eci.gov.in/" target="_blank" rel="noopener noreferrer" class="prep-link">Search on ECI →</a>
+            </div>
+            <div class="prep-card">
+              <h3>🪪 Accepted ID Documents</h3>
+              <ul>
+                <li>Voter ID Card (EPIC)</li>
+                <li>Aadhaar Card</li>
+                <li>Passport</li>
+                <li>Driving Licence</li>
+                <li>PAN Card</li>
+                <li>MNREGA Job Card</li>
+                <li>Bank / Post Office Passbook (with photo)</li>
+                <li>Employee ID (Govt/PSU)</li>
+              </ul>
+            </div>
+            <div class="prep-card">
+              <h3>📰 Research Your Candidates</h3>
+              <p>All candidate affidavits (criminal history, education, assets) are publicly available on the ECI website. Use <strong>KnowYourCandidate</strong> app to review before voting.</p>
+            </div>
+            <div class="prep-card">
+              <h3>⏰ Polling Hours</h3>
+              <p>General polling hours are <strong>7 AM to 6 PM</strong>. Urban and remote areas may have different hours. Check your booth's schedule on the ECI site.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vote Tab -->
+        <div id="tabpanel-vote" class="guide-panel" role="tabpanel" aria-labelledby="tab-vote">
+          <div class="voting-steps">
+            <div class="vs-item">
+              <div class="vs-icon" aria-hidden="true">🚶</div>
+              <div class="vs-text">
+                <h3>Arrive at Your Polling Booth</h3>
+                <p>Carry your Voter ID or approved photo ID. Locate your booth early — especially in congested areas. Queue-management apps from ECI show real-time wait times.</p>
+              </div>
+            </div>
+            <div class="vs-item">
+              <div class="vs-icon" aria-hidden="true">✅</div>
+              <div class="vs-text">
+                <h3>Identity Verification</h3>
+                <p>Polling officers verify your name on the voter list and check your photo ID. Your name is marked in the register and you sign/thumb-print.</p>
+              </div>
+            </div>
+            <div class="vs-item">
+              <div class="vs-icon" aria-hidden="true">🖊️</div>
+              <div class="vs-text">
+                <h3>Indelible Ink</h3>
+                <p>Indelible ink is applied on the left index finger — it cannot be washed off for days. This prevents duplicate voting across phases.</p>
+              </div>
+            </div>
+            <div class="vs-item">
+              <div class="vs-icon" aria-hidden="true">🗳️</div>
+              <div class="vs-text">
+                <h3>Cast Your Vote on EVM</h3>
+                <p>In the voting compartment, press the blue button next to your chosen candidate's name and party symbol on the EVM ballot unit.</p>
+              </div>
+            </div>
+            <div class="vs-item">
+              <div class="vs-icon" aria-hidden="true">📜</div>
+              <div class="vs-text">
+                <h3>VVPAT Confirmation</h3>
+                <p>The VVPAT (Voter Verifiable Paper Audit Trail) machine shows a paper slip for 7 seconds confirming your vote. This slip drops into a sealed box — verifiable in disputes.</p>
+              </div>
+            </div>
+            <div class="vs-item">
+              <div class="vs-icon" aria-hidden="true">🏠</div>
+              <div class="vs-text">
+                <h3>Done! Your Vote is Counted</h3>
+                <p>You have fulfilled your democratic duty. The entire process takes under 5 minutes at most booths. EVMs are sealed and stored until counting day.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Tab -->
+        <div id="tabpanel-understand" class="guide-panel" role="tabpanel" aria-labelledby="tab-understand">
+          <div class="results-explainer">
+            <div class="re-block">
+              <h3>🔢 How Are Votes Counted?</h3>
+              <p>Counting happens on a single day for all phases. EVMs are brought to counting centers under strict security. Counting agents from each candidate's party are present to observe every round.</p>
+            </div>
+            <div class="re-block">
+              <h3>🏆 First Past the Post (FPTP)</h3>
+              <p>India uses the FPTP system — the candidate with the <strong>most votes</strong> in a constituency wins, even without a majority. This is also called a "simple plurality" system.</p>
+            </div>
+            <div class="re-block">
+              <h3>🏛️ Forming the Government</h3>
+              <p>For a party to form government alone, it needs <strong>272 seats</strong> (simple majority of 543). Coalitions are common — the leader of the largest alliance is invited by the President to form the government.</p>
+            </div>
+            <div class="re-block">
+              <h3>📊 Reading the Results</h3>
+              <p>Results come in constituency-by-constituency. Running tallies on ECI's website show party-wise totals in real time. Most major results are declared within 6–10 hours of counting starting at 8 AM.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- EVM Tab -->
+        <div id="tabpanel-evm" class="guide-panel" role="tabpanel" aria-labelledby="tab-evm">
+          <div class="evm-explainer">
+            <div class="evm-visual" aria-label="EVM diagram">
+              <div class="evm-unit cu">
+                <strong>Control Unit</strong>
+                <span>With Polling Officer</span>
+              </div>
+              <div class="evm-cable" aria-hidden="true">——5m cable——</div>
+              <div class="evm-unit bu">
+                <strong>Ballot Unit</strong>
+                <span>In Voting Compartment</span>
+              </div>
+              <div class="evm-unit vvpat">
+                <strong>VVPAT</strong>
+                <span>Paper Audit Trail</span>
+              </div>
+            </div>
+            <div class="evm-facts">
+              <div class="ef-item">
+                <h4>🔒 Is EVM Hackable?</h4>
+                <p>EVMs are standalone devices — they are not connected to internet, WiFi, or Bluetooth. They use one-time programmable chips manufactured by government units (ECIL & BEL). The Supreme Court has upheld their reliability.</p>
+              </div>
+              <div class="ef-item">
+                <h4>📦 Storage & Transport</h4>
+                <p>After voting, EVMs are sealed with multiple seals, signed by candidate agents, and stored in strong rooms under round-the-clock CRPF guard and CCTV surveillance until counting day.</p>
+              </div>
+              <div class="ef-item">
+                <h4>🧪 First-Level Checking (FLC)</h4>
+                <p>Before elections, all EVMs undergo FLC in the presence of political party representatives. Mock polls are conducted to test accuracy. Any faulty machines are rejected.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── QUIZ SECTION ─────────────────── -->
+    <section id="section-quiz" class="section" aria-labelledby="quiz-heading">
+      <div class="page-header">
+        <div class="section-label">Test Your Knowledge</div>
+        <h2 id="quiz-heading" class="page-title">Civic Knowledge Quiz</h2>
+        <p class="page-subtitle">10 questions on Indian elections and democracy. How well do you score?</p>
+      </div>
+      <div class="quiz-container">
+        <div id="quiz-start" class="quiz-start-screen" role="region" aria-label="Quiz start screen">
+          <div class="qs-icon" aria-hidden="true">🎯</div>
+          <h3>Ready to test your civic knowledge?</h3>
+          <p>10 questions · Multiple choice · Instant feedback · Earn a badge!</p>
+          <div class="quiz-user-display" id="quizUserDisplay" aria-live="polite"></div>
+          <button class="btn-primary" id="startQuiz" aria-label="Start the civic quiz">
+            Start Quiz →
+          </button>
+        </div>
+        <div id="quiz-game" class="quiz-game hidden" role="region" aria-label="Quiz game area" aria-live="polite">
+          <div class="quiz-progress-bar" role="progressbar" aria-label="Quiz progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10">
+            <div id="quizProgressFill" class="qp-fill"></div>
+          </div>
+          <div class="quiz-meta">
+            <span id="quizCounter">Question 1 / 10</span>
+            <span id="quizScore">Score: 0</span>
+          </div>
+          <div id="questionCard" class="question-card">
+            <div id="questionText" class="qt-text"></div>
+            <div id="optionsGrid" class="options-grid" role="group" aria-label="Answer options"></div>
+          </div>
+          <div id="feedbackBox" class="feedback-box hidden" aria-live="assertive"></div>
+          <button id="nextQBtn" class="btn-primary hidden" aria-label="Next question">Next →</button>
+        </div>
+        <div id="quiz-result" class="quiz-result hidden" role="region" aria-label="Quiz results" aria-live="polite">
+          <div class="qr-badge" id="quizBadge" aria-label="Achievement badge"></div>
+          <h3 id="quizResultTitle">Quiz Complete!</h3>
+          <p id="quizResultScore"></p>
+          <p id="quizResultMsg"></p>
+          <div class="qr-actions">
+            <button class="btn-primary" id="retakeQuiz" aria-label="Retake quiz">Retake Quiz</button>
+            <button class="btn-secondary" id="shareQuiz" aria-label="Share your score">Share Score</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────── CHAT SECTION ─────────────────── -->
+    <section id="section-chat" class="section" aria-labelledby="chat-heading">
+      <div class="page-header">
+        <div class="section-label">AI-Powered</div>
+        <h2 id="chat-heading" class="page-title">Ask the Election AI</h2>
+        <p class="page-subtitle">Ask anything about Indian elections in English or Hindi. Powered by Claude AI.</p>
+      </div>
+      <div class="chat-wrapper" role="region" aria-label="AI Chat interface">
+        <div class="chat-sidebar">
+          <div class="cs-title">Quick Questions</div>
+          <div class="quick-questions" role="list" aria-label="Suggested questions">
+            <button class="qq-btn" role="listitem" data-q="How do I register to vote in India?">How do I register to vote?</button>
+            <button class="qq-btn" role="listitem" data-q="What is the Model Code of Conduct in Indian elections?">What is Model Code of Conduct?</button>
+            <button class="qq-btn" role="listitem" data-q="How does the EVM machine work in India?">How does EVM work?</button>
+            <button class="qq-btn" role="listitem" data-q="What documents do I need to bring to vote in India?">What ID do I need to vote?</button>
+            <button class="qq-btn" role="listitem" data-q="Explain the FPTP system used in Indian elections">What is the FPTP system?</button>
+            <button class="qq-btn" role="listitem" data-q="How are results declared in Indian elections?">How are results declared?</button>
+            <button class="qq-btn" role="listitem" data-q="What is NOTA in Indian elections?">What is NOTA?</button>
+            <button class="qq-btn" role="listitem" data-q="How does coalition government formation work in India?">How is govt formed?</button>
+          </div>
+          <div class="chat-history-section" id="chatHistorySection">
+            <div class="cs-title">Chat History</div>
+            <div id="chatHistoryList" class="history-list" aria-label="Previous chat sessions" aria-live="polite">
+              <p class="history-empty">Sign in to save chats</p>
+            </div>
+          </div>
+        </div>
+        <div class="chat-main">
+          <div class="chat-messages" id="chatMessages" role="log" aria-label="Chat messages" aria-live="polite">
+            <div class="chat-msg bot" role="article" aria-label="AI message">
+              <div class="msg-avatar" aria-hidden="true">🤖</div>
+              <div class="msg-bubble">
+                <p>Namaste! 🙏 I'm your ElectIQ AI assistant, powered by Claude.</p>
+                <p>I can help you understand <strong>Indian elections</strong> — the process, your rights as a voter, timelines, how EVMs work, how governments are formed, and much more.</p>
+                <p>What would you like to know? <em>Ask in English or Hindi!</em></p>
+              </div>
+            </div>
+          </div>
+          <div class="chat-input-area">
+            <div id="typingIndicator" class="typing-indicator hidden" aria-live="polite" aria-label="AI is typing">
+              <span></span><span></span><span></span>
+            </div>
+            <form class="chat-form" id="chatForm" role="search" aria-label="Ask a question">
+              <textarea
+                id="chatInput"
+                class="chat-input"
+                placeholder="Ask about voter registration, EVMs, election process…"
+                rows="1"
+                maxlength="500"
+                aria-label="Your question"
+                aria-multiline="true"
+              ></textarea>
+              <button type="submit" class="chat-send" id="sendBtn" aria-label="Send message" disabled>
+                <span class="send-icon" aria-hidden="true">↑</span>
+              </button>
+            </form>
+            <div class="chat-footer">
+              <span>Powered by Claude AI · <span id="charCount">0</span>/500</span>
+              <button class="clear-chat" id="clearChat" aria-label="Clear chat">Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+  <!-- User Profile Modal -->
+  <div id="profileModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close profile modal">✕</button>
+      <h3 id="profileModalTitle">Your Profile</h3>
+      <div id="profileContent"></div>
+      <button class="btn-danger" id="signOutBtn" aria-label="Sign out">Sign Out</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <!-- Firebase SDKs (v9 compat) -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/chat.js"></script>
+  <script src="js/timeline.js"></script>
+  <script src="js/news.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

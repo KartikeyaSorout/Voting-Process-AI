@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Firebase
+.firebase/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build output
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Original flat files (moved to public/)
+/app.js
+/auth.js
+/chat.js
+/firebase-config.js
+/news.js
+/quiz.js
+/style.css
+/sw.js
+/timeline.js
+/manifest.json
